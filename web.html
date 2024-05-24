@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridgeshop</title>
+    
+    <title>サイトの構成</title>
+    <style>
+        body {
+          background: #c3c5c7;
+          height: 1500px;
+        }
+        
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 140px;
+          background: rgba(0, 0, 0, .8);
+          transition: height 0.3s;
+        }
+        
+        .header .wrap {
+          margin: 0 auto;
+          width: 90%;
+          max-width: 69em;
+        }
+        
+        .header h1,
+        .header .menu {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .header h1,
+        .header .menu a {
+            line-height: 140px;
+            color: #808080;
+            text-decoration: none;
+        }
+        
+        .header .menu a:hover {
+            color: #ff0000;
+            transition: color 0.3s ease;
+        }
+        
+        .header h1 {
+          float: left;
+          margin: 0;
+          color: #ffffff;
+          font-size: 72px;
+          text-transform: uppercase;
+        }
+        
+        .header h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .header .menu {
+          float: right;
+        }
+        
+        .header h1,
+        .header nav a {
+            transition: all 0.3s;
+        }
+         
+        .header.shrink { height: 90px; }
+        .header.shrink h1,
+        .header.shrink nav a { line-height: 90px; }
+        .header.shrink h1 { font-size: 2em; }
+        
+        .lead {  
+            margin-bottom: 100px;
+            margin-top: 200px;
+            font-size: 50px;
+            text-align: left;
+            margin-left: 150px;
+            margin-right: 30px;
+        }
+        
+        .sm {
+            font-size: 15px;
+            color: red;
+        }
+        
+        .float-right {
+            float: right;
+            margin-left: 20px;
+        }
+        
+        .image-container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .kaisya_syoukai {
+            font-size: 40px;
+            color: #808080;
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .senntaku {
+            letter-spacing: 5px;
+        }
+        
+        .text-input {
+            width: 80%;
+            margin: 20px auto;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        html, body {
+          overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            max-height: calc(100vh - 60px);
+            width: auto;
+            margin-top: 60px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .image-frame {
+            border: 2px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            height: 150px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .image-frame img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .details {
+            display: none;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 48px;
+            }
+
+            .header .menu a {
+                font-size: 14px;
+                line-height: 90px;
+            }
+
+            .lead {
+                font-size: 32px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .image-frame {
+                width: 150px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                height: 90px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+                line-height: 90px;
+            }
+
+            .header .menu a {
+                font-size: 12px;
+                line-height: 90px;
+            }
+
+            .lead {
+                font-size: 24px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .image-frame {
+                width: 100px;
+                height: 75px;
+                padding: 5px;
+            }
+        }
+    </style>
+
+</head>
+<title>メニューバー</title>
+<body>
+    <header class="header">
+        <div class="wrap">                     
+            <h1><a href="#top">Bridgeshop</a></h1>
+            <div class="senntaku">
+                <nav class="menu">
+                    <a class='navbar-brand' href="一覧のURLをここに入力">一覧</a>
+                    <a class='navbar-brand' href="https://jjc-net.ac.jp/">作品集（仮）</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+</body>
+
+
+    <img src="file:///C:/Users/kokuf/OneDrive/デスクトップ/勉強/作品/image/背景.png" alt="" width=1920 height=1080>   
+    <input type="text" class="text-input" placeholder="商品検索" size=30>
+
+    <!-- <title>Image Preview and Details</title>
+    <style>
+        .image-frame {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .details {
+            display: none;
+        }
+        .clearfix {
+            clear: both;
+        }
+    </style> -->
+</head>
+
+<title>画像の枠表示</title>
+<style>
+    .image-frame {
+        display: inline-block;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .details {
+        display: none;
+    }
+    .clearfix {
+        clear: both;
+    }
+</style>
+</head>
+<body>
+
+
+
+<title>画像の枠表示</title>
+
+<div class="image-frame" id="image1" onclick="redirectToPage('image1.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像1">
+    <div class="details" id="details1">
+        画像1の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image1')" style="display:none">
+</div>
+
+<div class="image-frame" id="image2" onclick="redirectToPage('image2.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像2">
+    <div class="details" id="details2">
+        画像2の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image2')" style="display:none">
+</div>
+
+<div class="image-frame" id="image3" onclick="redirectToPage('image3.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像3">
+    <div class="details" id="details3">
+        画像3の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image3')" style="display:none">
+</div>
+
+<div class="image-frame" id="image4" onclick="redirectToPage('image4.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像4">
+    <div class="details" id="details4">
+        画像4の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image4')" style="display:none">
+</div>
+
+<div class="image-frame" id="image5" onclick="redirectToPage('image5.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像5">
+    <div class="details" id="details5">
+        画像5の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image5')" style="display:none">
+</div>
+
+<div class="image-frame" id="image6" onclick="redirectToPage('image6.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像6">
+    <div class="details" id="details6">
+        画像6の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image6')" style="display:none">
+</div>
+
+<div class="image-frame" id="image7" onclick="redirectToPage('image7.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像7">
+    <div class="details" id="details7">
+        画像7の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image7')" style="display:none">
+</div>
+
+<div class="image-frame" id="image8" onclick="redirectToPage('image8.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像8">
+    <div class="details" id="details8">
+        画像8の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image8')" style="display:none">
+</div>
+
+<div class="image-frame" id="image9" onclick="redirectToPage('image9.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像9">
+    <div class="details" id="details9">
+        画像9の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image9')" style="display:none">
+</div>
+
+<div class="image-frame" id="image10" onclick="redirectToPage('image10.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像10">
+    <div class="details" id="details10">
+        画像10の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image10')" style="display:none">
+</div>
+
+<div class="image-frame" id="image11" onclick="redirectToPage('image11.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像11">
+    <div class="details" id="details11">
+        画像11の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image11')" style="display:none">
+</div>
+
+<div class="image-frame" id="image12" onclick="redirectToPage('image12.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像12">
+    <div class="details" id="details12">
+        画像12の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image12')" style="display:none">
+</div>
+
+<div class="image-frame" id="image13" onclick="redirectToPage('image13.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像13">
+    <div class="details" id="details13">
+        画像13の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image13')" style="display:none">
+</div>
+
+<div class="image-frame" id="image14" onclick="redirectToPage('image14.html')">
+    <img src="https://via.placeholder.com/200x150" alt="サンプル画像14">
+    <div class="details" id="details14">
+        画像14の詳細情報をここに表示します。
+    </div>
+    <input type="file" accept="image/*" onchange="previewImage(event, 'image14')" style="display:none">
+</div>
+
+<div class="clearfix"></div>
+
+<script>
+    function redirectToPage(pageUrl) {
+        window.location.href = pageUrl;
+    }
+
+    function toggleDetails(imageId) {
+        var detailsId = "details" + imageId.replace('image', '');
+        var detailsElement = document.getElementById(detailsId);
+        detailsElement.style.display = detailsElement.style.display === "block" ? "none" : "block";
+    }
+
+    function previewImage(event, frameId) {
+        var input = event.target;
+        var frame = document.getElementById(frameId);
+        var img = frame.querySelector("img");
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function() {
+            img.src = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+    }
+</script>
+
+</body>
+</html>
